@@ -73,7 +73,7 @@ The following APIs list are used to store and retrive data within the session.
 - <font color="green">getAttributeNames</font>
 - <font color="green">getValueNames</font>            
 - Used to store data withun the current session.
-
+-----------------
 
 ## File Access
 
@@ -86,7 +86,14 @@ The most common APIs used to read and write file contents are:
 - <font color="green">java.io.fileOutputStream</font>
 - <font color="green">java.io.FileReader</font>
 - <font color="green">java.io.FileWriter</font>            
-- UThese classes take a File object in their constructors or may open a file via filename string wich may give path traversal if the parameter is not checked or parsed before.
+- These classes take a File object in their constructors or may open a file via filename string wich may give path traversal if the parameter is not checked or parsed before.
+-----------------
+
+## Database Access
+
+The following are the APIs used for executing an arbitrary strings as a SQL query:
+
+
 
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
