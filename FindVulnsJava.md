@@ -21,6 +21,7 @@ security configurations.
 - <font color="green"> getParameterMap</font>
 
 Can you spot the correct code and the wrong one?
+Example of wrong code that lead to Cross Site Scripting XSS.
 
 ```java
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -39,6 +40,8 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IO
 }
 ```
 -----------------
+
+As we can see the parameter 'ginoparam' in the first code is not sanitized, a malicious attacker can inject javascript code on 'ginoparam' and XSS will be triggered  out.
 
 - <font color="green"> getQueryString</font> 
 - Retire the entire query string and could be used instead <font color="green"> getParameter</font> 
