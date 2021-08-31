@@ -43,6 +43,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IO
 
 As we can see the parameter 'ginoparam' in the first code is not sanitized, a malicious attacker can inject javascript code on 'ginoparam' and XSS will be triggered  out.
 
+
 - <font color="green"> getQueryString</font> 
 - Retire the entire query string and could be used instead <font color="green"> getParameter</font> 
 -----------------
@@ -58,7 +59,34 @@ As we can see the parameter 'ginoparam' in the first code is not sanitized, a ma
 - Giving back all the url request with also all the query string.
 -----------------
 
+## Session Interaction
 
+Java Platform applications use the ```java javax.servlet.http.HttpSession``` interface to store and retrieve information on the current session.
+The following APIs list are used to store and retrive data within the session.
+
+- <font color="green">setAttribute</font> 
+- <font color="green">putValue</font>      
+- Used to store data withun the current session.
+
+- <font color="green">getAttribute</font> 
+- <font color="green">getValue</font>
+- <font color="green">getAttributeNames</font>
+- <font color="green">getValueNames</font>            
+- Used to store data withun the current session.
+
+
+## File Access
+
+The main class used to acess files and directories in Java is ```java java.io.File```.
+Path Traversal vulnerabilities may exist if the user controll that parameter/data is passed as the filename parmater without checking or parsing.
+
+The most common APIs used to read and write file contents are:
+
+- <font color="green">java.io.FileInputStream</font> 
+- <font color="green">java.io.fileOutputStream</font>
+- <font color="green">java.io.FileReader</font>
+- <font color="green">java.io.FileWriter</font>            
+- UThese classes take a File object in their constructors or may open a file via filename string wich may give path traversal if the parameter is not checked or parsed before.
 
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
