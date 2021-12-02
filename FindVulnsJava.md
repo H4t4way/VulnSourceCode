@@ -106,11 +106,26 @@ The following are the APIs used for executing an arbitrary strings as a SQL quer
 
 
 
+## Command Injection
 
 
 
+```java
+public String ping(String args) {
+        Runtime runtime = Runtime.getRuntime();
+        Process proc = runtime.exec("DIR" + " " + args);
 
+        InputStream is = proc.getInputStream();
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
 
+    String output = "";
+        String line;
+        while ((line = br.readLine()) != null) {
+                output = output + "\n" + line);
+        }
+    return output;
+```
 
 
 
