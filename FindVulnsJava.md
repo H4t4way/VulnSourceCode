@@ -111,7 +111,7 @@ The following are the APIs used for executing an arbitrary strings as a SQL quer
 
 
 ```java
-public String ping(String args) {
+public String dir(String args) {
         Runtime runtime = Runtime.getRuntime();
         Process proc = runtime.exec("DIR" + " " + args);
 
